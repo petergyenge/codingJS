@@ -1,21 +1,42 @@
-function missingChar(str: string, n: number){
-  let strN = str[n]
-  let result = ""
-    for (let i = 0; i < str.length; i++) {
-        if(str[i] != strN){
-            result += str[i]
-            console.log(result)
-        }else{
-            result == result
-            console.log(result)
-        }
-    }
-}
+function last2(str: string): number {
 
-
-let test = missingChar('kitten', 1) // ktten
-console.log(test)
-let test2 = missingChar('kitten', 0) // itten
-console.log(test2)
-let test3 = missingChar('kitten', 4) // kittn
-console.log(test3)
+    let lastTwoChar = ""
+  
+    let counter = 0
+  
+    let i = 0
+    while (str[i] !== undefined) {
+  
+      if (str[i + 1] == undefined && str[i + 2] == undefined) {
+        lastTwoChar = str[i] + str[i - 1]
+      }
+  
+      if (lastTwoChar == (str[i] + str[i + 1])) {
+        console.log(lastTwoChar + "inIf")
+        counter++
+  
+      }
+        console.log(str[i] + str[i + 1] + "TökömMár");
+      
+        console.log(lastTwoChar + "inWhile")
+      i++
+    } return counter
+  
+  }
+  
+  
+  
+  let test1 = last2("hixxhi")
+  console.log(test1);
+  
+  let test2 = last2("xaxxaxaxx")
+  console.log(test2);
+  
+  
+  let test3 = last2("axxaaxx")
+  console.log(test3);
+  
+  
+  
+  
+  export { }
